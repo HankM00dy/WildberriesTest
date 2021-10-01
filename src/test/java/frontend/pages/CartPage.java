@@ -1,9 +1,12 @@
 package frontend.pages;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
+import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class CartPage {
@@ -12,9 +15,10 @@ public class CartPage {
      * Локаторы для страницы CartPage
      */
 
-    protected SelenideElement buttonOrder = $x("//button[contains(@class,'c-btn-main-lg btn-do-order')]");
-    protected SelenideElement buttonSelectAddress = $x("//div[contains(@class,'c-self')]//button[@type='button'][contains(text(),'Выбрать адрес')]");
-    protected SelenideElement buttonFirstAddress = $x("(//ul[@id='pooList']//p)[1]");
+    protected SelenideElement buttonOrder = $x("//button[contains(@class,'b-btn-do-order')]");
+    protected SelenideElement ButtonSelectAddressInDialog = $x("//div[contains(@class,'contents__self')]//button[contains(@class,'popup__btn-main btn__choose-address')]");
+    protected SelenideElement buttonSelectAddress = $x("//div[contains(text(),'Выбрать адрес')]");
+    protected ElementsCollection buttonFirstAddress = $$x("//div[contains(@class,'address-item j-poo-option')]//div[@class='address-item__name']");
     protected SelenideElement buttonApplyLocation = $x("//button[@type='submit'][contains(text(),'Выбрать')]");
     protected SelenideElement buttonPaidByCard = $x("//p[contains(text(),'Картой')]");
     protected SelenideElement inputName = $x("//div[..//div[contains(text(),'Имя')]]//input[@name='orderDetails.NewFirstName']");
@@ -47,8 +51,14 @@ public class CartPage {
         return this;
     }
 
-    public CartPage clickButtonFirstAddress() {
-        (buttonFirstAddress).shouldBe(Condition.visible).click();
+    public CartPage clickButtonSelectAddressInDialog() {
+        (ButtonSelectAddressInDialog).shouldBe(Condition.visible).click();
+        return this;
+    }
+
+    public CartPage clickButtonFirstAddress(int index) {
+        (buttonFirstAddress).shouldBe(CollectionCondition.sizeGreaterThan(0));
+        buttonFirstAddress.get(index).click();
         return this;
     }
 
