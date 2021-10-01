@@ -1,37 +1,10 @@
 package frontend.suites;
 
-import com.codeborne.selenide.Configuration;
-import frontend.pages.*;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import frontend.pages.TestBase;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+public class MainTest extends TestBase {
 
-public class MainTest {
-
-    private MainPage mainPage = new MainPage();
-    private MenCategoryPage menCategoryPage = new MenCategoryPage();
-    private CatalogPage catalogPage = new CatalogPage();
-    private CartPage cartPage = new CartPage();
-    private CardOfProductPage cardOfProductPage = new CardOfProductPage();
-    private ShoesCategoryPage shoesCategoryPage = new ShoesCategoryPage();
-    private LoginPage loginPage = new LoginPage();
-
-
-    @BeforeMethod
-    public void setUp() {
-        Configuration.browser = "chrome";
-        Configuration.startMaximized = true;
-        Configuration.timeout = 5000;
-        open("https://www.wildberries.ru");
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        closeWebDriver();
-    }
 
     @Test(description = "Сценарий №1. Проход по полному БП")
     public void testAddProductToCart() {
