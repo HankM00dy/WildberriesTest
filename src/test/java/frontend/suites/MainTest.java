@@ -8,14 +8,14 @@ public class MainTest extends TestBase {
 
     @Test(description = "Сценарий №1. Проход по полному БП")
     public void testAddProductToCart() {
-        mainPage
+        app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
                 .clickButtonNavigation()
                 .clickButtonMensCategory();
-        menCategoryPage
+        app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        catalogPage
+        app.catalogPage
                 .clickButtonCostumes()
                 .assertImageOfItemShouldBeVisible()
                 .clickCheckboxSportCostume()
@@ -25,28 +25,28 @@ public class MainTest extends TestBase {
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice()
                 .clickImageProductInCatalog(0);
-        cardOfProductPage
+        app.cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
                 .clickButtonAddToCart()
                 .assertButtonGoToCartShouldBeVisible();
-        String nameOfFirstProduct = cardOfProductPage.getTextNameOfProduct();
-        cardOfProductPage
+        String nameOfFirstProduct = app.cardOfProductPage.getTextNameOfProduct();
+        app.cardOfProductPage
                 .clickButtonTurnBack();
-        catalogPage
+        app.catalogPage
                 .clickImageProductInCatalog(2);
-        cardOfProductPage
+        app.cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
                 .clickButtonAddToCart()
                 .assertButtonGoToCartShouldBeVisible();
-        String nameOfSecondProduct = cardOfProductPage.getTextNameOfProduct();
-        mainPage
+        String nameOfSecondProduct = app.cardOfProductPage.getTextNameOfProduct();
+        app.mainPage
                 .clickButtonNavigation()
                 .clickButtonShoesCategory();
-        shoesCategoryPage
+        app.shoesCategoryPage
                 .clickButtonMenShoes();
-        catalogPage
+        app.catalogPage
                 .clickButtonSneakersSection()
                 .clickCheckboxSneakers()
                 .assertCheckboxShouldBeSelected("Кроссовки")
@@ -55,15 +55,15 @@ public class MainTest extends TestBase {
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice()
                 .clickImageProductInCatalog(0);
-        cardOfProductPage
+        app.cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
                 .clickButtonAddToCart()
                 .assertButtonGoToCartShouldBeVisible();
-        String nameOfThirdProduct = cardOfProductPage.getTextNameOfProduct();
-        cardOfProductPage
+        String nameOfThirdProduct = app.cardOfProductPage.getTextNameOfProduct();
+        app.cardOfProductPage
                 .clickButtonGoToCart();
-        cartPage
+        app.cartPage
                 .assertTextNameOfProductShouldBeVisible(nameOfFirstProduct)
                 .assertTextNameOfProductShouldBeVisible(nameOfSecondProduct)
                 .assertTextNameOfProductShouldBeVisible(nameOfThirdProduct)
@@ -80,7 +80,7 @@ public class MainTest extends TestBase {
                 .assertTextErrorIncorrectNameShouldBeVisible()
                 .assertTextErrorIncorrectSurnameShouldBeVisible()
                 .clickButtonEnter();
-        loginPage
+        app.loginPage
                 .assertTextHeadingEnterInYourProfileShouldBeVisible();
     }
 }
