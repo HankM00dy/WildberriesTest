@@ -21,7 +21,7 @@ public class MainTest {
 
 
     @BeforeMethod
-    public void settUp() {
+    public void setUp() {
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
@@ -51,7 +51,7 @@ public class MainTest {
                 .clickCheckboxBrand("adidas")
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice()
-                .clickImageProductInCatalog();
+                .clickImageProductInCatalog(0);
         cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
@@ -61,7 +61,7 @@ public class MainTest {
         cardOfProductPage
                 .clickButtonTurnBack();
         catalogPage
-                .clickImageProductInCatalog();
+                .clickImageProductInCatalog(2);
         cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
@@ -81,7 +81,7 @@ public class MainTest {
                 .clickCheckboxBrand("adidas")
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice()
-                .clickImageProductInCatalog();
+                .clickImageProductInCatalog(0);
         cardOfProductPage
                 .assertImageOFProductShouldBeVisible()
                 .clickButtonSizeOfProduct("2")
@@ -96,7 +96,8 @@ public class MainTest {
                 .assertTextNameOfProductShouldBeVisible(nameOfThirdProduct)
                 .clickButtonOrder()
                 .clickButtonSelectAddress()
-                .clickButtonFirstAddress()
+                .clickButtonSelectAddressInDialog()
+                .clickButtonFirstAddress(0)
                 .clickButtonApplyLocation()
                 .clickButtonPaidByCard()
                 .setInputName("1111111111")

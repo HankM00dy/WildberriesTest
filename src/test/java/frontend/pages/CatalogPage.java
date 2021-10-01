@@ -66,12 +66,12 @@ public class CatalogPage {
         return this;
     }
 
-    public CatalogPage clickImageProductInCatalog() {
+    public CatalogPage clickImageProductInCatalog(int index) {
         ElementsCollection imageProductInCatalog = $$x("//div[contains(@class,'product-card__img-wrap')]//img");
         imageProductInCatalog.shouldBe(CollectionCondition.sizeGreaterThan(0));
-        SelenideElement image = imageProductInCatalog.get(0);
+        SelenideElement image = imageProductInCatalog.get(index);
         Selenide.actions()
-                .moveToElement(image, 0, 80)
+                .moveToElement(image, 0, -30)
                 .click()
                 .build()
                 .perform();
