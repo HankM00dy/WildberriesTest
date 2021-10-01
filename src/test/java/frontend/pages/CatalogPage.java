@@ -1,10 +1,10 @@
 package frontend.pages;
 
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
-
-import javax.swing.*;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -69,9 +69,8 @@ public class CatalogPage {
     public CatalogPage clickImageProductInCatalog(int index) {
         ElementsCollection imageProductInCatalog = $$x("//div[contains(@class,'product-card__img-wrap')]//img");
         imageProductInCatalog.shouldBe(CollectionCondition.sizeGreaterThan(0));
-        SelenideElement image = imageProductInCatalog.get(index);
         Selenide.actions()
-                .moveToElement(image, 0, -30)
+                .moveToElement(imageProductInCatalog.get(index), 0, -30)
                 .click()
                 .build()
                 .perform();
