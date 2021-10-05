@@ -15,20 +15,8 @@ public class ApplicationManager {
     public CardOfProductPage cardOfProductPage = new CardOfProductPage();
     public ShoesCategoryPage shoesCategoryPage = new ShoesCategoryPage();
     public LoginPage loginPage = new LoginPage();
-    public String browser;
-
-    public ApplicationManager(String browser) {
-        this.browser = browser;
-    }
 
     public void init() {
-        if (browser == BrowserType.FIREFOX) {
-            Configuration.browser = "firefox";
-        } else if (browser == BrowserType.CHROME) {
-            Configuration.browser = "chrome";
-        } else if (browser == BrowserType.OPERA) {
-            Configuration.browser = "opera";
-        }
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
         open("https://www.wildberries.ru");
