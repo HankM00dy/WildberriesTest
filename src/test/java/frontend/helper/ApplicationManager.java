@@ -1,5 +1,6 @@
 package frontend.helper;
 
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import frontend.pages.*;
 import org.openqa.selenium.remote.BrowserType;
@@ -17,6 +18,7 @@ public class ApplicationManager {
     public LoginPage loginPage = new LoginPage();
 
     public void init() {
+        Configuration.browser = Browsers.OPERA;
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
         open("https://www.wildberries.ru");
