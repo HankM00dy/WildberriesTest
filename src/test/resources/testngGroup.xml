@@ -3,7 +3,7 @@
     <test name="RunOnlyThirdTests">
         <groups>
             <run>
-                <include name="ThirdTest"></include>
+                <exclude name="ThirdTest"></exclude>
             </run>
             <dependencies>
                 <group name="NegativeTests" depends-on="PositiveTests"/>
