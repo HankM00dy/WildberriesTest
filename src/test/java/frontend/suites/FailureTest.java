@@ -5,9 +5,48 @@ import org.testng.annotations.Test;
 
 public class FailureTest extends TestBase {
 
-
     @Test(description = "Сценарий №1. Проход по полному БП")
     public void firstFailureTest() {
+        app.mainPage
+                .assertInputMainSearchLineShouldBeVisible()
+                .clickButtonNavigation()
+                .clickButtonMensCategory();
+        app.menCategoryPage
+                .assertTextHeadingMensCategoryShouldBeVisible()
+                .clickButtonClothes();
+        app.catalogPage
+                .clickButtonCostumes()
+                .assertImageOfItemShouldBeVisible()
+                .clickCheckboxSportCostume()
+                .assertCheckboxShouldBeSelected("Костюм спортивный")
+                .setInputBrandSearch("adidas")
+                .clickCheckboxBrand("adidas")
+                .assertCheckboxShouldBeSelected("adidas")
+                .clickButtonSortByPrice();
+    }
+
+    @Test(description = "Сценарий №1. Проход по полному БП")
+    public void secondFailureTest() {
+        app.mainPage
+                .assertInputMainSearchLineShouldBeVisible()
+                .clickButtonNavigation()
+                .clickButtonMensCategory();
+        app.menCategoryPage
+                .assertTextHeadingMensCategoryShouldBeVisible()
+                .clickButtonClothes();
+        app.catalogPage
+                .clickButtonCostumes()
+                .assertImageOfItemShouldBeVisible()
+                .clickCheckboxSportCostume()
+                .assertCheckboxShouldBeSelected("Костюм спортивный")
+                .setInputBrandSearch("adidas")
+                .clickCheckboxBrand("adidas")
+                .assertCheckboxShouldBeSelected("adidas")
+                .clickButtonSortByPrice();
+    }
+
+    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"ThirdTest"})
+    public void thirdFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
                 .clickButtonNavigation()
@@ -82,46 +121,6 @@ public class FailureTest extends TestBase {
                 .clickButtonEnter();
         app.loginPage
                 .assertTextHeadingEnterInYourProfileShouldBeVisible();
-    }
-
-    @Test(description = "Сценарий №1. Проход по полному БП")
-    public void secondTest() {
-        app.mainPage
-                .assertInputMainSearchLineShouldBeVisible()
-                .clickButtonNavigation()
-                .clickButtonMensCategory();
-        app.menCategoryPage
-                .assertTextHeadingMensCategoryShouldBeVisible()
-                .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
-    }
-
-    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"RightTest"})
-    public void thirdTest() {
-        app.mainPage
-                .assertInputMainSearchLineShouldBeVisible()
-                .clickButtonNavigation()
-                .clickButtonMensCategory();
-        app.menCategoryPage
-                .assertTextHeadingMensCategoryShouldBeVisible()
-                .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
 //    @Test

@@ -3,11 +3,8 @@
     <test name="RunOnlyThirdTests">
         <groups>
             <run>
-                <exclude name="ThirdTest"></exclude>
+                <include name="ThirdTest"></include>
             </run>
-            <dependencies>
-                <group name="NegativeTests" depends-on="PositiveTests"/>
-            </dependencies>
         </groups>
         <classes>
             <class name="frontend.suites.SmokeTest"></class>
