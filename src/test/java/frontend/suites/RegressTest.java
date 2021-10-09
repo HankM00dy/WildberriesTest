@@ -45,7 +45,7 @@ public class RegressTest extends TestBase {
                 .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"RightTest"})
+    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"ThirdTest"})
     public void thirdRegressTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -64,21 +64,4 @@ public class RegressTest extends TestBase {
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice();
     }
-
-//    @Test
-//    public void firstTest() {
-//        System.out.println("First test in Regress Test Done");
-//    }
-//
-//
-//    @Test
-//    public void secondTest() {
-//        System.out.println("Second test in Regress Test Done");
-//    }
-//
-//
-//    @Test(groups = {"RightTest"})
-//    public void thirdTest() {
-//        System.out.println("Third test in Regress Test Done");
-//    }
 }
