@@ -25,7 +25,7 @@ public class RegressTest extends TestBase {
                 .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
+    @Test(description = "Второй тест")
     public void secondRegressTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()

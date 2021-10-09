@@ -14,7 +14,7 @@
             </class>
             <class name="frontend.suites.FailureTest">
                 <methods>
-                    <include name="secondTest"></include>
+                    <include name="secondFailureTest"></include>
                 </methods>
             </class>
         </classes>
