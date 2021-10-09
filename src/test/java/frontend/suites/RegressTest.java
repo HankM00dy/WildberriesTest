@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class RegressTest extends TestBase {
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
+    @Test(description = "Сценарий №1. Регресс тест")
     public void firstRegressTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -14,18 +14,9 @@ public class RegressTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Второй тест")
+    @Test(description = "Сценарий №2. Регресс тест")
     public void secondRegressTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -34,18 +25,9 @@ public class RegressTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"ThirdTest"})
+    @Test(description = "Сценарий №3. Регресс тест", groups = {"ThirdTest"})
     public void thirdRegressTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -54,14 +36,5 @@ public class RegressTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 }

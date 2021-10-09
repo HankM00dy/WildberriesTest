@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class SmokeTest extends TestBase {
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
+    @Test(description = "Сценарий №1. Smoke тест")
     public void firstSmokeTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -14,18 +14,9 @@ public class SmokeTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Второй тест")
+    @Test(description = "Сценарий №2. Smoke тест")
     public void secondSmokeTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -34,18 +25,9 @@ public class SmokeTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"ThirdTest"})
+    @Test(description = "Сценарий №3. Smoke тест", groups = {"ThirdTest"})
     public void thirdSmokeTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -54,14 +36,5 @@ public class SmokeTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 }
