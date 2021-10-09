@@ -14,7 +14,6 @@ public class TestBase {
 
     @BeforeMethod(groups = {"ThirdTest"})
     public void startUpForGroups() {
-        System.setProperty("selenide.browser", "Chrome");
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
         open("https://www.wildberries.ru");
@@ -27,7 +26,7 @@ public class TestBase {
 
     @BeforeMethod
     public void startUp() {
-        System.setProperty("selenide.browser", "Chrome");
+
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
         open("https://www.wildberries.ru");
