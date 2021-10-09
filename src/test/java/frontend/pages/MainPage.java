@@ -2,6 +2,7 @@ package frontend.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -24,22 +25,25 @@ public class MainPage {
      * Сценарий №1. Проход по полному БП
      */
 
+    @Step("Проверка, что строка поиска на главной строке отображается")
     public MainPage assertInputMainSearchLineShouldBeVisible() {
-        (inputMainSearchLine).shouldBe(Condition.visible);
         Assert.assertTrue((inputMainSearchLine).shouldBe(Condition.visible).isDisplayed());
         return this;
     }
 
+    @Step("Клик по кнопке [Навигация]")
     public MainPage clickButtonNavigation() {
         (buttonNavigation).shouldBe(Condition.visible).click();
         return this;
     }
 
+    @Step("Клик по кнопке [Мужская одежда]")
     public MainPage clickButtonMensCategory() {
         (buttonMensCategory).shouldBe(Condition.visible).click();
         return this;
     }
 
+    @Step("Клик по кнопке [Обувь]")
     public MainPage clickButtonShoesCategory() {
         (buttonShoesCategory).shouldBe(Condition.visible).click();
         return this;

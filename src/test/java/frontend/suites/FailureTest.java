@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class FailureTest extends TestBase {
 
 
-    @Test(description = "Первый тест")
+    @Test(description = "Сценарий №1. Нестабильный тест")
     public void firstFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -15,18 +15,9 @@ public class FailureTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Второй тест")
+    @Test(description = "Сценарий №2. Нестабильный тест")
     public void secondFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
@@ -35,18 +26,9 @@ public class FailureTest extends TestBase {
         app.menCategoryPage
                 .assertTextHeadingMensCategoryShouldBeVisible()
                 .clickButtonClothes();
-        app.catalogPage
-                .clickButtonCostumes()
-                .assertImageOfItemShouldBeVisible()
-                .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
-                .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП", groups = {"ThirdTest"})
+    @Test(description = "Сценарий №3. Нестабильный тест", groups = {"ThirdTest"})
     public void thirdFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
