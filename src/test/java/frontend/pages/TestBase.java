@@ -25,14 +25,15 @@ public class TestBase {
     }
 
     @BeforeMethod
-    public void init() {
+    public void startUp() {
+
         Configuration.startMaximized = true;
         Configuration.timeout = 5000;
         open("https://www.wildberries.ru");
     }
 
     @AfterMethod
-    public void stop() {
+    public void tearDown() {
         closeWebDriver();
     }
 }

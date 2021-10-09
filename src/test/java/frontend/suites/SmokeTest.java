@@ -64,21 +64,4 @@ public class SmokeTest extends TestBase {
                 .assertCheckboxShouldBeSelected("adidas")
                 .clickButtonSortByPrice();
     }
-
-//    @Test
-//    public void firstTest() {
-//        System.out.println("First test in Smoke Test Done");
-//    }
-//
-//
-//    @Test
-//    public void secondTest() {
-//        System.out.println("Second test in Smoke Test Done");
-//    }
-//
-//
-//    @Test(groups = {"RightTest"})
-//    public void thirdTest() {
-//        System.out.println("Third test in Smoke Test Done");
-//    }
 }
