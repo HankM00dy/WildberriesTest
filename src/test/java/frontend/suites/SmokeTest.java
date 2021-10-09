@@ -25,7 +25,7 @@ public class SmokeTest extends TestBase {
                 .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
+    @Test(description = "Второй тест")
     public void secondSmokeTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()

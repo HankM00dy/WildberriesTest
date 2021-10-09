@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 public class FailureTest extends TestBase {
 
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
-    public void secondTest() {
+    @Test(description = "Первый тест")
+    public void firstFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
                 .clickButtonNavigation()
@@ -26,8 +26,8 @@ public class FailureTest extends TestBase {
                 .clickButtonSortByPrice();
     }
 
-    @Test(description = "Сценарий №1. Проход по полному БП")
-    public void thirdTest() {
+    @Test(description = "Второй тест")
+    public void secondFailureTest() {
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
                 .clickButtonNavigation()
