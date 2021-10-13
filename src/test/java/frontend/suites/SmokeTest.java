@@ -40,6 +40,17 @@ public class SmokeTest extends TestBase {
 
     @Test(description = "Сценарий №4. Smoke тест")
     public void fourthSmokeTest() {
+
+        // Переменные
+        String brand = "adidas";
+        String name = "1111111111";
+        String surname = "1111111111";
+        String phone = "1111111111";
+        String firstCategory = "Костюм спортивный";
+        String secondCategory = "Кроссовки";
+
+        // Описание тестового скрипта
+
         app.mainPage
                 .assertInputMainSearchLineShouldBeVisible()
                 .clickButtonNavigation()
@@ -51,10 +62,10 @@ public class SmokeTest extends TestBase {
                 .clickButtonCostumes()
                 .assertImageOfItemShouldBeVisible()
                 .clickCheckboxSportCostume()
-                .assertCheckboxShouldBeSelected("Костюм спортивный")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
+                .assertCheckboxShouldBeSelected(firstCategory)
+                .setInputBrandSearch(brand)
+                .clickCheckboxBrand(brand)
+                .assertCheckboxShouldBeSelected(brand)
                 .clickButtonSortByPrice()
                 .clickImageProductInCatalog(0);
         app.cardOfProductPage
@@ -81,10 +92,10 @@ public class SmokeTest extends TestBase {
         app.catalogPage
                 .clickButtonSneakersSection()
                 .clickCheckboxSneakers()
-                .assertCheckboxShouldBeSelected("Кроссовки")
-                .setInputBrandSearch("adidas")
-                .clickCheckboxBrand("adidas")
-                .assertCheckboxShouldBeSelected("adidas")
+                .assertCheckboxShouldBeSelected(secondCategory)
+                .setInputBrandSearch(brand)
+                .clickCheckboxBrand(brand)
+                .assertCheckboxShouldBeSelected(brand)
                 .clickButtonSortByPrice()
                 .clickImageProductInCatalog(0);
         app.cardOfProductPage
@@ -105,9 +116,9 @@ public class SmokeTest extends TestBase {
                 .clickButtonFirstAddress(0)
                 .clickButtonApplyLocation()
                 .clickButtonPaidByCard()
-                .setInputName("1111111111")
-                .setInputSurname("1111111111")
-                .setInputPhone("1111111111")
+                .setInputName(name)
+                .setInputSurname(surname)
+                .setInputPhone(phone)
                 .clickButtonConfirmOrder()
                 .assertTextErrorIncorrectNameShouldBeVisible()
                 .assertTextErrorIncorrectSurnameShouldBeVisible()
